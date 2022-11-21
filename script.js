@@ -1,15 +1,22 @@
-let sketchDiv; 
+//let sketchDiv; 
 
-function createDivs() {
-    for(x = 0; x < 16; x++) {
-        let sketchDiv = document.createElement('div');
-        sketchDiv.className = "sketchDiv";
-        document.getElementById('sketchpad').appendChild(sketchDiv);
-        sketchDiv.style.border = "1px solid grey";
+const sketchPad = document.getElementById('sketchpad');
+
+function createDivs(num) {
+    for(x = 0; x < num; x++) {
+        row = document.createElement('div');
+        row.className = "row";
+        
+        for(y = 1; y <= num; y++) {
+            let cell = document.createElement("div");
+            cell.className = "cell";
+            row.appendChild(cell);
+        }
+        sketchPad.appendChild(row); 
     }
 }
 
-createDivs();
+createDivs(4);
 
 //let sketchDiv1x1 = document.createElement('div');
 //document.getElementById('sketchpad').appendChild(sketchDiv1x1)
