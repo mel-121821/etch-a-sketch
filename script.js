@@ -32,17 +32,30 @@ let userInput = "";
 
 function getUserInput() {
     userInput = document.getElementById('newSize').value;
+    if (userInput > 100) {
+        alert("Please enter a valid number!")
+        userInput = "16"
+    } else {
+    }
 }
 
 gridSizeButton.addEventListener('click', () => {
     deleteDivs();
     getUserInput();
     createDivs(userInput);
+    clearInput();
 });
 
 function deleteDivs() {
     while (sketchPad.hasChildNodes()) {
         sketchPad.removeChild(sketchPad.firstChild);
+    }
+}
+
+function clearInput() {
+    userField = document.getElementById('newSize');
+    if (userField.value !== "") {
+        userField.value = "";
     }
 }
 
