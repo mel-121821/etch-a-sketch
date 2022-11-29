@@ -1,7 +1,9 @@
 //let sketchDiv; 
 
 const sketchPad = document.getElementById('sketchpad');
-let cell = ""
+const gridSizeButton = document.getElementById('changeSize');
+let cell = "";
+let row = "";
 
 function createDivs(num) {
     for(x = 0; x < num; x++) {
@@ -18,13 +20,36 @@ function createDivs(num) {
     }
 }
 
-createDivs(4);
+createDivs(16);
 
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
-        event.target.style.backgroundColor = "black";
+        event.target.style.backgroundColor = "grey";
     })
 }
+
+let userInput = "";
+
+function getUserInput() {
+    userInput = document.getElementById('newSize').value;
+}
+
+gridSizeButton.addEventListener('click', () => {
+    deleteDivs();
+    getUserInput();
+    createDivs(userInput);
+});
+
+function deleteDivs() {
+    while (sketchPad.hasChildNodes()) {
+        sketchPad.removeChild(sketchPad.firstChild);
+    }
+}
+
+
+//function changeGridSize() {
+    //gridSizeButton.addEventListener('click', 
+//}
 
 //let sketchDiv1x1 = document.createElement('div');
 //document.getElementById('sketchpad').appendChild(sketchDiv1x1)
