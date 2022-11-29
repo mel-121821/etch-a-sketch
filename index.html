@@ -18,10 +18,16 @@
         
         <div Id="sketchpad"></div>
 
-        <div class="para">
-            <p>Click below to change grid size (Max: 100)</p>
+        <div class="userInput">
+            <form>
+                <label for="newSize">To change grid size, enter a number below (Max: 100).</label><br>
+                
+                <div class="inputField">
+                <input type="number" id="newSize" name="newSize">
+                </div>
+            </form>
         </div>
-        
+
         <div class="button">
             <button id="changeSize">Change</button>
         </div>
