@@ -2,6 +2,9 @@
 
 const sketchPad = document.getElementById('sketchpad');
 const gridSizeButton = document.getElementById('changeSize');
+let userField = document.getElementById('newSize');
+const form = document.getElementById('form')
+
 let cell = "";
 let row = "";
 
@@ -31,7 +34,7 @@ function mouseOver() {
 let userInput = "";
 
 function getUserInput() {
-    userInput = document.getElementById('newSize').value;
+    userInput = userField.value;
     if (userInput > 100) {
         alert("Please enter a valid number!")
         userInput = "16"
@@ -39,11 +42,24 @@ function getUserInput() {
     }
 }
 
-gridSizeButton.addEventListener('click', () => {
+//gridSizeButton.addEventListener('click', () => {
+    //deleteDivs();
+    //getUserInput();
+    //createDivs(userInput);
+    //clearInput();
+//});
+
+function changeGridSize() {
     deleteDivs();
     getUserInput();
     createDivs(userInput);
     clearInput();
+}
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    changeGridSize();
 });
 
 function deleteDivs() {
@@ -53,7 +69,6 @@ function deleteDivs() {
 }
 
 function clearInput() {
-    userField = document.getElementById('newSize');
     if (userField.value !== "") {
         userField.value = "";
     }
