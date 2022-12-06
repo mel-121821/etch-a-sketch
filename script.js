@@ -25,11 +25,35 @@ function createDivs(num) {
 
 createDivs(16);
 
+
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
-        event.target.style.backgroundColor = "grey";
+        event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
+        
     })
 }
+
+function generateRandomColor() {
+    return Math.floor(Math.random() * 255)
+}
+
+
+
+//let randomColor = "";
+
+//function generateRandomColor() {
+    //let maxValue = 0xFFFFFF;
+    //let randomNum = Math.random() * maxValue;
+    //randomNum = Math.floor(randomNum);
+    //randomNum = randomNum.toString(16);
+    //let randomColor = randomNum.padStart(6, 0);
+    //return randomColor
+//}
+
+//generateRandomColor();
+//console.log(randomColor);
+
+
 
 let userInput = "";
 
@@ -41,13 +65,6 @@ function getUserInput() {
     } else {
     }
 }
-
-//gridSizeButton.addEventListener('click', () => {
-    //deleteDivs();
-    //getUserInput();
-    //createDivs(userInput);
-    //clearInput();
-//});
 
 function changeGridSize() {
     deleteDivs();
