@@ -34,6 +34,11 @@ multiColorButton.addEventListener('click', () => {
     console.log(multiColorButton);
 })
 
+greyScaleButton.addEventListener('click', () => {
+    toggle(greyScaleButton);
+    console.log(greyScaleButton);
+})
+
 
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
