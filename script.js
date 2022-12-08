@@ -42,8 +42,11 @@ greyScaleButton.addEventListener('click', () => {
 
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
-        if (multiColorButton.value === "ON") {
-            event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
+        //if (multiColorButton.value === "ON") {
+            //event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
+        if (greyScaleButton.value === "ON") {
+            event.target.style.backgroundColor = 'hsl(155, 100%, ' + increaseGreyScale() + '%\)'
+            console.log(hslValue);
         } else {
             event.target.style.backgroundColor = "grey";
         }
@@ -54,6 +57,18 @@ function mouseOver() {
 function generateRandomColor() {
     return Math.floor(Math.random() * 255)
 }
+
+let hslValue = 100;
+
+function increaseGreyScale() {
+    if (hslValue > 0) {
+        --hslValue;
+    } else {
+        hslValue = 0;
+    }
+    return hslValue;
+}
+
 
 function toggle(buttonName) {
     if (buttonName.value === "ON") {
