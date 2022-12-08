@@ -10,44 +10,48 @@
 </head>
 
 <body>
+    <div class="content">  
 
-    <div class="content">   
         <div class="title">
             <h1>Etch-a-Sketch</h1>
         </div>
         
-        <div Id="sketchpad"></div>
+        <div class="user-play-area">
 
-        <button id="multiColor" value="OFF">Multi-color</button>
+            <div class="user-options">
 
-        <label class="toggle">
-            <input id="multi-selector" class="toggle-checkbox" type="checkbox">
-            <div class="toggle-switch"></div>
-            <span class="toggle-label">Multi-color Mode</span>
-        </label>
+                <label class="toggle">
+                    <input id="multi-selector" class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                    <span class="toggle-label">Multi-color Mode</span>
+                </label>
 
-        <button id="greyScale" value="OFF">Grey-scale</button>
+                <label class="toggle">
+                    <input id="greyscale-selector" class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                    <span class="toggle-label">Greyscale Mode</span>
+                </label>
 
-        <label class="toggle">
-            <input id="greyscale-selector" class="toggle-checkbox" type="checkbox">
-            <div class="toggle-switch"></div>
-            <span class="toggle-label">Greyscale Mode</span>
-        </label>
-
-        <div class="userInput">
-            <form id= "form">
-                <label for="newSize">To change grid size, enter a number below (Max: 100).</label><br>
+                <div class="userInput">
+                    <form id= "form">
+                        <label for="newSize">To change grid size, enter a number below (Max: 100).</label><br>
                 
-                <div class="inputField">
-                    <input type="number" id="newSize" name="newSize">
-                </div>
+                        <div class="inputField">
+                            <input type="number" id="newSize" name="newSize">
+                        </div>
 
-                <div class="button">
-                    <button id="changeSize" type="submit">Change</button>
+                        <div class="button">
+                            <button id="changeSize"                 type="submit">Change</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+
+            <div class="sketch-pad-container">
+                <div Id="sketchpad"></div>
+            </div>
+
         </div>
-
         
     </div> 
 
