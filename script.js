@@ -2,13 +2,13 @@
 
 const sketchPad = document.getElementById('sketchpad');
 
-const gridSizeButton = document.getElementById('changeSize');
+const gridSizeButton = document.getElementById('change-size');
 const clearGridButton = document.getElementById('clear-grid');
-let userField = document.getElementById('newSize');
+let userField = document.getElementById('new-size');
 const form = document.getElementById('form')
 
-const multiColorButton = document.getElementById('multiColor');
-const greyScaleButton = document.getElementById('greyScale');
+//const multiColorButton = document.getElementById('multiColor');
+//const greyScaleButton = document.getElementById('greyScale');
 
 const multiColorToggleSwitch = document.getElementById('multi-selector');
 const greyScaleToggleSwitch = document.getElementById('greyscale-selector')
@@ -65,6 +65,7 @@ greyScaleToggleSwitch.addEventListener('click', () => {
 clearGridButton.addEventListener('click', () => {
     deleteDivs();
     createDivs(16);
+    resetHslValue();
 })
 
 
@@ -127,6 +128,7 @@ function changeGridSize() {
     getUserInput();
     createDivs(userInput);
     clearInput();
+    resetHslValue();
 }
 
 form.addEventListener('submit', function(e){
