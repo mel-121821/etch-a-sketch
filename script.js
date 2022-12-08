@@ -9,6 +9,9 @@ const form = document.getElementById('form')
 const multiColorButton = document.getElementById('multiColor');
 const greyScaleButton = document.getElementById('greyScale');
 
+const multiColorToggleSwitch = document.getElementById('multi-selector');
+const greyScaleToggleSwitch = document.getElementById('greyscale-selector')
+
 let cell = "";
 let row = "";
 
@@ -29,26 +32,45 @@ function createDivs(num) {
 
 createDivs(16);
 
-multiColorButton.addEventListener('click', () => {
-    toggle(multiColorButton);
-    if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {
-        toggle(greyScaleButton);
+//multiColorButton.addEventListener('click', () => {
+    //toggle(multiColorButton);
+    //if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {
+        //toggle(greyScaleButton);
+    //}
+//})
+
+multiColorToggleSwitch.addEventListener('click', () => {
+    if (multiColorToggleSwitch.checked === true && greyScaleToggleSwitch.checked === true) {
+        toggle(greyScaleToggleSwitch);
     }
+    console.log(multiColorToggleSwitch.checked)
+    console.log(greyScaleToggleSwitch.checked)
 })
 
-greyScaleButton.addEventListener('click', () => {
-    toggle(greyScaleButton);
-    if (greyScaleButton.value === "ON" && multiColorButton.value === "ON") {
-        toggle(multiColorButton);
+//greyScaleButton.addEventListener('click', () => {
+    //toggle(greScaleButton);
+    //if (greyScaleButton.value === "ON" && multiColorButton.value === "ON") {
+        //toggle(multiColorButton);
+    //}
+//})
+
+greyScaleToggleSwitch.addEventListener('click', () => {
+    if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === true) {
+        toggle(multiColorToggleSwitch);
+    
     }
+    console.log(greyScaleToggleSwitch.checked)
+    console.log(multiColorToggleSwitch.checked)
+    resetHslValue();
+    console.log(hslValue);
 })
 
 
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
-        if (multiColorButton.value === "ON" && greyScaleButton.value === "OFF") {
+        if (multiColorToggleSwitch.checked === true && greyScaleToggleSwitch.checked === false) {
             event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
-        } else if (greyScaleButton.value === "ON" && multiColorButton.value === "OFF") {
+        } else if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === false) {
             event.target.style.backgroundColor = 'hsl(155, 100%, ' + increaseGreyScale() + '%\)'
         } else {
             event.target.style.backgroundColor = "grey";
@@ -72,14 +94,18 @@ function increaseGreyScale() {
     return hslValue;
 }
 
+function resetHslValue () {
+    hslValue = 100;
+    return hslValue;
+}
 
-function toggle(buttonName) {
-    if (buttonName.value === "ON") {
-        buttonName.value = "OFF";
-        buttonName.style.borderColor = "red"
-    } else if (buttonName.value === "OFF") {
-        buttonName.value = "ON"
-        buttonName.style.borderColor = "green"
+function toggle(toggleSwitchName) {
+    if (toggleSwitchName.checked === true) {
+        toggleSwitchName.checked  = false;
+        toggleSwitchName.style.borderColor = "red"
+    } else if (toggleSwitchName.checked === false) {
+        toggleSwitchName.checked = true
+        toggleSwitchName.style.borderColor = "green"
     }
 }
 
@@ -118,11 +144,3 @@ function clearInput() {
         userField.value = "";
     }
 }
-
-
-//function changeGridSize() {
-    //gridSizeButton.addEventListener('click', 
-//}
-
-//let sketchDiv1x1 = document.createElement('div');
-//document.getElementById('sketchpad').appendChild(sketchDiv1x1)
