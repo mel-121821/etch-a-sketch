@@ -3,6 +3,7 @@
 const sketchPad = document.getElementById('sketchpad');
 
 const gridSizeButton = document.getElementById('changeSize');
+const clearGridButton = document.getElementById('clear-grid');
 let userField = document.getElementById('newSize');
 const form = document.getElementById('form')
 
@@ -15,7 +16,7 @@ const greyScaleToggleSwitch = document.getElementById('greyscale-selector')
 let cell = "";
 let row = "";
 
-function createDivs(num) {
+function createDivs(num) { 
     for(x = 0; x < num; x++) {
         row = document.createElement('div');
         row.className = "row";
@@ -34,7 +35,7 @@ createDivs(16);
 
 //multiColorButton.addEventListener('click', () => {
     //toggle(multiColorButton);
-    //if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {
+    //if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {, 
         //toggle(greyScaleButton);
     //}
 //})
@@ -57,12 +58,13 @@ multiColorToggleSwitch.addEventListener('click', () => {
 greyScaleToggleSwitch.addEventListener('click', () => {
     if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === true) {
         toggle(multiColorToggleSwitch);
-    
     }
-    console.log(greyScaleToggleSwitch.checked)
-    console.log(multiColorToggleSwitch.checked)
-    resetHslValue();
-    console.log(hslValue);
+    resetHslValue();   
+})
+
+clearGridButton.addEventListener('click', () => {
+    deleteDivs();
+    createDivs(16);
 })
 
 
