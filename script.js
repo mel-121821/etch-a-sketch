@@ -31,20 +31,28 @@ createDivs(16);
 
 multiColorButton.addEventListener('click', () => {
     toggle(multiColorButton);
+    if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {
+        toggle(greyScaleButton);
+    }
     console.log(multiColorButton);
+    console.log(greyScaleButton);
 })
 
 greyScaleButton.addEventListener('click', () => {
     toggle(greyScaleButton);
+    if (greyScaleButton.value === "ON" && multiColorButton.value === "ON") {
+        toggle(multiColorButton);
+    }
     console.log(greyScaleButton);
+    console.log(multiColorButton);
 })
 
 
 function mouseOver() {
     cell.addEventListener('mouseenter', (event) => {
-        //if (multiColorButton.value === "ON") {
-            //event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
-        if (greyScaleButton.value === "ON") {
+        if (multiColorButton.value === "ON" && greyScaleButton.value === "OFF") {
+            event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
+        } else if (greyScaleButton.value === "ON" && multiColorButton.value === "OFF") {
             event.target.style.backgroundColor = 'hsl(155, 100%, ' + increaseGreyScale() + '%\)'
             console.log(hslValue);
         } else {
