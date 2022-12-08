@@ -34,8 +34,6 @@ multiColorButton.addEventListener('click', () => {
     if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {
         toggle(greyScaleButton);
     }
-    console.log(multiColorButton);
-    console.log(greyScaleButton);
 })
 
 greyScaleButton.addEventListener('click', () => {
@@ -43,8 +41,6 @@ greyScaleButton.addEventListener('click', () => {
     if (greyScaleButton.value === "ON" && multiColorButton.value === "ON") {
         toggle(multiColorButton);
     }
-    console.log(greyScaleButton);
-    console.log(multiColorButton);
 })
 
 
@@ -54,7 +50,6 @@ function mouseOver() {
             event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
         } else if (greyScaleButton.value === "ON" && multiColorButton.value === "OFF") {
             event.target.style.backgroundColor = 'hsl(155, 100%, ' + increaseGreyScale() + '%\)'
-            console.log(hslValue);
         } else {
             event.target.style.backgroundColor = "grey";
         }
@@ -87,22 +82,6 @@ function toggle(buttonName) {
         buttonName.style.borderColor = "green"
     }
 }
-
-//let randomColor = "";
-
-//function generateRandomColor() {
-    //let maxValue = 0xFFFFFF;
-    //let randomNum = Math.random() * maxValue;
-    //randomNum = Math.floor(randomNum);
-    //randomNum = randomNum.toString(16);
-    //let randomColor = randomNum.padStart(6, 0);
-    //return randomColor
-//}
-
-//generateRandomColor();
-//console.log(randomColor);
-
-
 
 let userInput = "";
 
