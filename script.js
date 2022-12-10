@@ -6,6 +6,7 @@ const gridSizeButton = document.getElementById('change-size');
 const clearGridButton = document.getElementById('clear-grid');
 let userField = document.getElementById('new-size');
 const form = document.getElementById('form')
+const gridSizePara = document.querySelector('.para');
 
 //const multiColorButton = document.getElementById('multiColor');
 //const greyScaleButton = document.getElementById('greyScale');
@@ -117,7 +118,8 @@ let userInput = "";
 function getUserInput() {
     userInput = userField.value;
     if (userInput > 100) {
-        alert("Please enter a valid number!")
+        gridSizePara.textContent = "Please enter a valid number!"
+        gridSizePara.style.color = "red"
         userInput = "16"
     } else {
     }
