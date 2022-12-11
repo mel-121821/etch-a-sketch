@@ -8,9 +8,6 @@ let userField = document.getElementById('new-size');
 const form = document.getElementById('form')
 const gridSizePara = document.querySelector('.para');
 
-//const multiColorButton = document.getElementById('multiColor');
-//const greyScaleButton = document.getElementById('greyScale');
-
 const multiColorToggleSwitch = document.getElementById('multi-selector');
 const greyScaleToggleSwitch = document.getElementById('greyscale-selector')
 
@@ -34,28 +31,12 @@ function createDivs(num) {
 
 createDivs(16);
 
-//multiColorButton.addEventListener('click', () => {
-    //toggle(multiColorButton);
-    //if (multiColorButton.value === "ON" && greyScaleButton.value === "ON") {, 
-        //toggle(greyScaleButton);
-    //}
-//})
-
 multiColorToggleSwitch.addEventListener('click', () => {
     if (multiColorToggleSwitch.checked === true && greyScaleToggleSwitch.checked === true) {
         toggle(greyScaleToggleSwitch);
     }
-    console.log(multiColorToggleSwitch.checked)
-    console.log(greyScaleToggleSwitch.checked)
     resetParaToDefault();
 })
-
-//greyScaleButton.addEventListener('click', () => {
-    //toggle(greScaleButton);
-    //if (greyScaleButton.value === "ON" && multiColorButton.value === "ON") {
-        //toggle(multiColorButton);
-    //}
-//})
 
 greyScaleToggleSwitch.addEventListener('click', () => {
     if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === true) {
