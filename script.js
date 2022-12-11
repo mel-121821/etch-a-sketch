@@ -114,6 +114,7 @@ function toggle(toggleSwitchName) {
 }
 
 let userInput = "";
+const originalParaText = "(Max: 100)";
 
 function getUserInput() {
     userInput = userField.value;
@@ -122,6 +123,8 @@ function getUserInput() {
         gridSizePara.style.color = "red"
         userInput = "16"
     } else {
+        gridSizePara.textContent = originalParaText;
+        gridSizePara.style.color = "black";
     }
 }
 
