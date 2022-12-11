@@ -75,7 +75,7 @@ function mouseOver() {
         if (multiColorToggleSwitch.checked === true && greyScaleToggleSwitch.checked === false) {
             event.target.style.backgroundColor = 'rgba(' + generateRandomColor() + ',' + generateRandomColor() + ',' + generateRandomColor() + '\)';
         } else if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === false) {
-            event.target.style.backgroundColor = 'hsl(155, 100%, ' + increaseGreyScale() + '%\)'
+            event.target.style.backgroundColor = 'hsl(155, 0%, ' + increaseGreyScale() + '%\)'
         } else {
             event.target.style.backgroundColor = "grey";
         }
