@@ -47,6 +47,7 @@ multiColorToggleSwitch.addEventListener('click', () => {
     }
     console.log(multiColorToggleSwitch.checked)
     console.log(greyScaleToggleSwitch.checked)
+    resetParaToDefault();
 })
 
 //greyScaleButton.addEventListener('click', () => {
@@ -60,13 +61,15 @@ greyScaleToggleSwitch.addEventListener('click', () => {
     if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === true) {
         toggle(multiColorToggleSwitch);
     }
-    resetHslValue();   
+    resetHslValue();  
+    resetParaToDefault(); 
 })
 
 clearGridButton.addEventListener('click', () => {
     deleteDivs();
     createDivs(16);
     resetHslValue();
+    resetParaToDefault();
 })
 
 
@@ -77,7 +80,7 @@ function mouseOver() {
         } else if (greyScaleToggleSwitch.checked === true && multiColorToggleSwitch.checked === false) {
             event.target.style.backgroundColor = 'hsl(155, 0%, ' + increaseGreyScale() + '%\)'
         } else {
-            event.target.style.backgroundColor = "grey";
+            event.target.style.backgroundColor = "black";
         }
         
     })
@@ -118,14 +121,18 @@ const originalParaText = "(Max: 100)";
 
 function getUserInput() {
     userInput = userField.value;
-    if (userInput > 100) {
+    if (userInput > 100 || userInput < 1) {
         gridSizePara.textContent = "Please enter a valid number!"
         gridSizePara.style.color = "red"
         userInput = "16"
     } else {
-        gridSizePara.textContent = originalParaText;
-        gridSizePara.style.color = "black";
+       resetParaToDefault(); 
     }
+}
+
+function resetParaToDefault () {
+    gridSizePara.textContent = originalParaText;
+    gridSizePara.style.color = "black";
 }
 
 function changeGridSize() {
