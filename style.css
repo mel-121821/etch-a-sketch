@@ -8,9 +8,11 @@ body {
     justify-content: space-between;
 }
 
-div {
+/*div {
     border: 1px solid grey;
-}
+}*/
+
+/* Comment syntax >> */
 
 .content {
     display: flex;
@@ -43,6 +45,11 @@ div {
     flex-direction: column;
 }
 
+.para-div {
+  margin: -10px;
+}
+
+
 #sketchpad {
     width: 500px;
     height: 500px;
@@ -66,7 +73,9 @@ div {
     flex-grow: 1;
 }
 
-
+.user-button-inputs {
+  margin-top: 50px;
+}
 
 form {
     display: flex;
@@ -88,6 +97,12 @@ button:hover {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     transition: 1s ease;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .toggle {
