@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     font-weight: 500;
+    font-size: 17px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +57,7 @@ body {
 #sketchpad {
     width: 600px;
     height: 600px;
-    border: 1px solid grey;
+    border: 2px solid rgb(156, 156, 156);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -88,7 +89,7 @@ form {
 
 button {
     background: white;
-    font-size: 14px;
+    font-size: 16px;
     margin: 10px;
     padding: 10px 30px;
     border-radius: 8px;
