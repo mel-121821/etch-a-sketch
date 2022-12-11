@@ -6,6 +6,9 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: space-between;
+    background-image: url('img/grey-pattern-background3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /*div {
@@ -58,7 +61,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: rgb(255, 220, 255);
+    background-color: white;
 }
 
 .row {
@@ -84,7 +87,7 @@ form {
 }
 
 button {
-    background: rgb(255, 220, 255);
+    background: white;
     font-size: 14px;
     margin: 10px;
     padding: 10px 30px;
@@ -113,7 +116,7 @@ button:hover {
   
   .toggle-switch {
     display: inline-block;
-    background: #ccc;
+    background: rgb(187, 187, 187);
     border-radius: 16px;
     width: 58px;
     height: 32px;
