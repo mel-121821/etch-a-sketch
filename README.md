@@ -40,3 +40,11 @@ References:
 
 Toggle HTML and CSS styles from: https://alvarotrigo.com/blog/toggle-switch-css/
 (Used style #6)
+
+Background images:
+Drew Beamer - unsplash.com
+Chiranjeevi - unsplash.com
+Shapelined - unsplash.com
+Solstice Hannan - unsplash.com
+Payam Moin Afshari - unsplash.com
+Jess Bailey - unsplash.com
