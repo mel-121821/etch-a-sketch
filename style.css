@@ -7,6 +7,11 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-image: url('img/grey-pattern-background3.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -160,4 +165,9 @@ button:hover {
     margin-left: 5px;
     position: relative;
     top: 2px;
+  }
+
+  .footer {
+    display: flex;
+    padding: 20px;
   }
